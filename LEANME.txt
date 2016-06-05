@@ -1,0 +1,19 @@
+https://www.playframework.com/documentation/2.5.x/JavaEbean
+
+Copiar la carpeta lib
+crear la carpeta db
+
+
+en application.conf
+
+  default.driver = org.sqlite.JDBC
+  default.url = "jdbc:sqlite:db/db.sqlite"
+  #default.username = sa
+  #default.password = ""
+
+
+Hacer activator run sobre el proyecto
+
+Crear estudiante controller apartir de home controller
+
+Instalar sqlite3  sudo apt-get install sqlite

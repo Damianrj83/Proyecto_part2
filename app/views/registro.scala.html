@@ -1,0 +1,34 @@
+@(message: String,  searchForm: Form[CreateAccount], postUrl: play.api.mvc.Call)
+@import helper._
+
+@main(message) {
+
+<div class="alert"> @message </div>
+@form(postUrl, 'class -> "form") {
+    @if(searchForm.hasGlobalErrors) {
+        <div class="alert alert-danger">
+            @searchForm.globalError.message
+        </div>
+    }
+
+    <fieldset>
+
+        <div class="row">
+            <div class="col-md-2"> 
+                @inputText(searchForm("email"),'_label -> "Correo Electronico",'class -> "form-control")</div>
+                
+            <div class="col-md-4">
+                @inputText(searchForm("contrasena"),'_label -> "Contrasena",'class -> "form-control")
+            </div>
+
+        </div>
+        
+
+    </fieldset>
+    
+     <div class="form-actions text-center">
+        <input type="submit" class="btn btn-success" value="guardar" >
+    </div>
+    
+    }
+}
