@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import play.data.Form;
 import play.mvc.*;
 import models.CreateAccount;
+import models.Login;
 import play.data.FormFactory;
 import play.data.validation.Constraints;
 import views.html.*;
@@ -30,7 +31,7 @@ public class HomeController extends Controller {
         return ok(index.render("Your new application is ready."));
     }
     
-    
+    //CreateAccount
      public Result crearRegistroGet() {
         Form<CreateAccount> pregForm = formFactory.form(CreateAccount.class);
         return ok(registro.render("Formulario de pregunta", pregForm, routes.HomeController.crearRegistroPost()));
@@ -49,5 +50,29 @@ public class HomeController extends Controller {
         return ok(registro.render("Recepción de formulario correcto.", pregForm,
                 routes.HomeController.crearRegistroPost()));
     }
+    
+    //Login
+    
+    public Result crearSesionGet() {
+        Form<Login> pregForm = formFactory.form(Login.class);
+        return ok(login.render("Formulario de pregunta", pregForm, routes.HomeController.crearSesionPost()));
+    }
+
+    public Result crearSesionPost() {
+        Form<Login> pregForm = formFactory.form(Login.class).bindFromRequest();
+        if (pregForm.hasErrors()) {
+            return badRequest(login.render("Encontramos errores",
+                    pregForm, routes.HomeController.index()));
+        } else {
+            Login preg = pregForm.get();
+            preg.save();
+            pregForm = formFactory.form(Login.class);
+        }
+        return ok(login.render("Recepción de formulario correcto.", pregForm,
+                routes.HomeController.crearSesionPost()));
+    }
+    
+    
+    
 
 }

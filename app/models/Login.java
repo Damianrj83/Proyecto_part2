@@ -17,22 +17,17 @@ import play.data.format.*;
 import play.data.validation.*;
 
 @Entity
-public class CreateAccount extends Model {
+public class Login extends Model {
     
     @Id
     @Constraints.Min(10)
     public Long id;
 
-	//@Constraints.Required
+	@Constraints.Required
     public String contrasena;
 
-	//@Constraints.Required
-    public String email;
-    
-    @Constraints.Required
-    public String tipoUsuario;
-        
-        
+	@Constraints.Required
+	public String email;
 
-    public static Finder<Long, CreateAccount> find = new Finder<Long,CreateAccount>(CreateAccount.class);
+    public static Finder<Long, Login> find = new Finder<Long,Login>(Login.class);
 }
