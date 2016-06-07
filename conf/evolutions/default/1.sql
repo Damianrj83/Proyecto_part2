@@ -26,6 +26,12 @@ create table login (
   constraint pk_login primary key (id)
 );
 
+create table main_profesional (
+  id                            bigint auto_increment not null,
+  buscar                        varchar(255),
+  constraint pk_main_profesional primary key (id)
+);
+
 
 # --- !Downs
 
@@ -34,4 +40,6 @@ drop table if exists create_account;
 drop table if exists estudiante;
 
 drop table if exists login;
+
+drop table if exists main_profesional;
 

@@ -10,6 +10,9 @@ POST	/crearRegistro	     		controllers.HomeController.crearRegistroPost()
 GET		/crearSesion				controllers.HomeController.crearSesionGet()
 POST	/crearSesion				controllers.HomeController.crearSesionPost()
 
+GET		/							controllers.ProfesionalController.crearMainGet()
+POST    /					  		controllers.ProfesionalController.crearMainPost()
+
 GET     /                           controllers.HomeController.index
 GET     /estudiante                 controllers.EstudianteController.index
 
