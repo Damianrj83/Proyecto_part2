@@ -38,6 +38,32 @@ public class Profesional extends Model {
      @Constraints.Required
     public String fechaNacimiento;
      
+     @Constraints.Required
+    public String nacionalidad;
+     
+     
+      @Constraints.Required
+    public String lugarResidencia;
+      
+      
+    @Constraints.Required
+    public String direccionExacta;
+    
+    
+    @Constraints.Required
+    public String telefono1;
+    
+    
+    @Constraints.Required
+    public String telefono2;
+     
+    
+     
+     
+     
+     
+     
+     
      
         
         

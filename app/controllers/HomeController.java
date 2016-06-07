@@ -28,13 +28,13 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-        return ok(index.render("Your new application is ready."));
+        return ok(index.render("LINK-JOB"));
     }
     
     //CreateAccount
      public Result crearRegistroGet() {
         Form<CreateAccount> pregForm = formFactory.form(CreateAccount.class);
-        return ok(registro.render("Formulario de pregunta", pregForm, routes.HomeController.crearRegistroPost()));
+        return ok(registro.render("Formulario", pregForm, routes.HomeController.crearRegistroPost()));
     }
 
     public Result crearRegistroPost() {
@@ -55,7 +55,7 @@ public class HomeController extends Controller {
     
     public Result crearSesionGet() {
         Form<Login> pregForm = formFactory.form(Login.class);
-        return ok(login.render("Formulario de pregunta", pregForm, routes.HomeController.crearSesionPost()));
+        return ok(login.render("Formulario", pregForm, routes.HomeController.crearSesionPost()));
     }
 
     public Result crearSesionPost() {
