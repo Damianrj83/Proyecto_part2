@@ -23,13 +23,13 @@ public class CreateAccount extends Model {
     @Constraints.Min(10)
     public Long id;
 
-	//@Constraints.Required
+	@Constraints.Required
     public String contrasena;
 
-	//@Constraints.Required
+	@Constraints.Required
     public String email;
     
-    @Constraints.Required
+   
     public String tipoUsuario;
         
         
