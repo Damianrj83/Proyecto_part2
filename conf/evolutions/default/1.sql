@@ -32,6 +32,14 @@ create table main_profesional (
   constraint pk_main_profesional primary key (id)
 );
 
+create table profesional (
+  id                            bigint auto_increment not null,
+  contrasena                    varchar(255),
+  email                         varchar(255),
+  tipo_usuario                  varchar(255),
+  constraint pk_profesional primary key (id)
+);
+
 
 # --- !Downs
 
@@ -42,4 +50,6 @@ drop table if exists estudiante;
 drop table if exists login;
 
 drop table if exists main_profesional;
+
+drop table if exists profesional;
 

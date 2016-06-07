@@ -1,0 +1,403 @@
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!--Inicio Collapse -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+      <!--Fin Collapse-->
+</head>
+	<body>
+    <div>
+      <form class="" action="/crearCVProfesional" method="POST">
+        <table>
+          <tr class="fila1">
+            <td>
+              <input type="image" value="Foto" name="foto"/>
+            </td>
+          </tr>
+          <tr class="fila2">
+            <td>
+              <button type="button" name="button">Cargar</button>
+            </td>
+          </tr>
+          <tr class="fila3"><!--FIX ME, change to 3 columns with 3 colspan="2"-->
+            <td>
+              Nombre:<br>
+            </td>
+            <td>
+              <input type="text" name="name" value="">
+            </td>
+            <td>
+              Apellido1:<br>
+            </td>
+            <td>
+              <input type="text" name="name" value="">
+            </td>
+            <td>
+              Apellido2:<br>
+            </td>
+            <td>
+              <input type="text" name="name" value="">
+            </td>
+
+          </tr>
+          <tr class="fila4">
+            <td>
+              Sexo:</br>
+            </td>
+            <td>
+              <select class="genero" name="">
+                <option value="genero">Masculino</option>
+                <option value="genero">Femenino</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="fila5">
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+            <td colspan="">
+
+            </td>
+          </tr>
+          <tr class="fila6">
+            <td colspan="4"><!--Si el elemento excede si tamano dentro de la celda, se utiliza para
+            ampliar el espacio sin afectar las demas celdas y/o elementos-->
+            Fecha de nacimiento:
+            <select class="fecha" name="">
+    <option value="01">01</option>
+    <option value="02">02</option>
+    <option value="03">03</option>
+    <option value="04">04</option>
+    <option value="05">05</option>
+    <option value="06">06</option>
+    <option value="07">07</option>
+    <option value="08">08</option>
+    <option value="09">09</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="13">13</option>
+    <option value="14">14</option>
+    <option value="15">15</option>
+    <option value="16">16</option>
+    <option value="17">17</option>
+    <option value="18">18</option>
+    <option value="19">19</option>
+    <option value="20">20</option>
+    <option value="21">21</option>
+    <option value="22">22</option>
+    <option value="23">23</option>
+    <option value="24">24</option>
+    <option value="25">25</option>
+    <option value="26">26</option>
+    <option value="27">27</option>
+    <option value="28">28</option>
+    <option value="29">29</option>
+            </select>
+            <select class="fecha" name="">
+              <option value="Enero">Enero</option>
+		<option value="Febrero">Febrero</option>
+		<option value="Marzo">Marzo</option>
+		<option value="Abril">Abril</option>
+		<option value="Mayo">Mayo</option>
+		<option value="Junio">Junio</option>
+		<option value="Julio">Julio</option>
+		<option value="Agosto">Agosto</option>
+		<option value="Setiembre">Setiembre</option>
+		<option value="Octubre">Octubre</option>
+		<option value="Noviembre">Noviembre</option>
+    <option value="Diciembre">Diciembre</option>
+            </select>
+            <select class="fecha" name="">
+              <option value="option">1985</option>
+              <option value="option">1986</option>
+              <option value="option">1987</option>
+              <option value="option">1988</option>
+              <option value="option">1989</option>
+              <option value="option">1990</option>
+
+            </select>
+            </td>
+          </tr>
+          <tr class="fila7">
+            <td colspan="2">
+              Nacionalidad:
+              <select class="nacionalidad" name="">
+                <option value="3">Afgano</option>
+      <option value="4">Alban&#233;s</option>
+      <option value="5">Alem&#225;n</option>
+      <option value="6">Angole&#243;</option>
+      <option value="11">Arabe</option>
+      <option value="12">Argelino, Algeriense</option>
+      <option value="13">Argentino</option>
+      <option value="16">Australiano</option>
+      <option value="17">Austriaco</option>
+      <option value="19">Bahame&#241;o</option>
+      <option value="21">Bangladesh&#237;</option>
+      <option value="23">Bielorruso</option>
+      <option value="24">Belga</option>
+      <option value="25">Belice&#241;o</option>
+      <option value="28">Butan&#233;s</option>
+      <option value="29">Boliviano</option>
+      <option value="30">Bosnio</option>
+      <option value="31">Botsuano</option>
+      <option value="32">Brasilero, Brasilense, Brasile&#241;o</option>
+      <option value="34">B&#250;lgaro</option>
+      <option value="37">Burund&#233;s</option>
+      <option value="39">Camboyano</option>
+      <option value="40">Camerun&#233;s, Camerunense</option>
+      <option value="41">Canadiense</option>
+      <option value="42">Chade&#241;o, Chadiense, Chad&#237;, Chadiano</option>
+      <option value="43">Chileno</option>
+      <option value="44">Vaticano</option>
+      <option value="49">Colombiano</option>
+      <option value="51">Congole&#241;o</option>
+      <option value="53">Norcoreano</option>
+      <option value="54">Surcoreano</option>
+      <option selected="selected" value="56">Costarricense, tico</option>
+      <option value="57">Croata</option>
+      <option value="58">Cubano</option>
+      <option value="59">Dinamarqu&#233;s, D&#225;nico, Dan&#233;s</option>
+      <option value="61">Ecuatoriano</option>
+      <option value="62">Egipcio, Egiptano</option>
+      <option value="63">Salvadore&#241;o</option>
+      <option value="65">Eritreo</option>
+      <option value="66">Eslovaco</option>
+      <option value="67">Esloveno</option>
+      <option value="68">Espa&#241;ol</option>
+      <option value="69">Estadounidense, Norteamericano</option>
+      <option value="70">Estonio, Estoniano</option>
+      <option value="71">Et&#237;ope</option>
+      <option value="72">Fiyiano</option>
+      <option value="73">Filipino, Filipense</option>
+      <option value="74">Finland&#233;s, Fin&#233;s</option>
+      <option value="75">Franc&#233;s</option>
+      <option value="76">Gabonense, Gabon&#233;s</option>
+      <option value="77">Gambiano</option>
+      <option value="79">Ghan&#233;s, Ghaneano</option>
+      <option value="81">Griego, Heleno</option>
+      <option value="85">Guatemalteco, Guatemalense</option>
+      <option value="87">Guineano</option>
+      <option value="88">Ecuatoguineano</option>
+      <option value="90">Guyan&#233;s</option>
+      <option value="91">Haitiano</option>
+      <option value="92">Hondure&#241;o</option>
+      <option value="94">H&#250;ngaro, Magiar</option>
+      <option value="95">Iraqu&#233;s, Iraqu&#237;</option>
+      <option value="96">Iran&#237;, P&#233;rsico</option>
+      <option value="97">Irland&#233;s, Hibernio</option>
+      <option value="98">Indio</option>
+      <option value="99">Indonesio</option>
+      <option value="103">Island&#233;s</option>
+      <option value="113">Salomonense</option>
+      <option value="117">Israelita, Israel&#237;</option>
+      <option value="118">Italiano</option>
+      <option value="119">Jamaiquino</option>
+      <option value="120">Japon&#233;s, Np&#243;n</option>
+      <option value="122">Jordano, Jordanio</option>
+      <option value="123">Kazajo</option>
+      <option value="124">Keniano,Keniata</option>
+      <option value="126">Kurdo</option>
+      <option value="128"> Kuwait&#237;</option>
+      <option value="129">Laosiano</option>
+      <option value="130">Lesotense</option>
+      <option value="131">Let&#243;n</option>
+      <option value="132">Liban&#233;s, Libanense</option>
+      <option value="133">Liberiano</option>
+      <option value="134">Libio</option>
+      <option value="135">Liechtensteiniano</option>
+      <option value="136">Lituano</option>
+      <option value="137">Luxemburgu&#233;s</option>
+      <option value="139">Macedonio</option>
+      <option value="140">Madecasiano, madagascarense</option>
+      <option value="141">Malau&#237;</option>
+      <option value="142">Malasio</option>
+      <option value="143">Maldivo</option>
+      <option value="144">Maliense o mal&#237;</option>
+      <option value="145">Malt&#233;s</option>
+      <option value="146">Marroqu&#237;</option>
+      <option value="147">Mauriciano</option>
+      <option value="150">Mexicano</option>
+      <option value="151">Micronesio</option>
+      <option value="152">Moldavo</option>
+      <option value="153">Monegasco</option>
+      <option value="154">Mongol</option>
+      <option value="157">Mozambique&#241;o</option>
+      <option value="160">Namibio</option>
+      <option value="161">Nauruano</option>
+      <option value="162">Nepal&#233;s</option>
+      <option value="164">Neozeland&#233;s</option>
+      <option value="165">Nicarag&#252;ense</option>
+      <option value="167">Nigeriano</option>
+      <option value="169">Noruego</option>
+      <option value="170">Oman&#237;</option>
+      <option value="172">Pakistan&#237;, Paquistan&#237;</option>
+      <option value="176">Paname&#241;o</option>
+      <option value="178">Paraguayo</option>
+      <option value="179">Peruano</option>
+      <option value="181">Polaco</option>
+      <option value="182">Portugu&#233;s</option>
+      <option value="183">Puertorrique&#241;o</option>
+      <option value="184">Catar&#237; o Qatar&#237;</option>
+      <option value="187">Checo</option>
+      <option value="188">Dominicano</option>
+      <option value="189">Ruand&#233;s</option>
+      <option value="190">Rumano</option>
+      <option value="191">Ruso</option>
+      <option value="193">Samoano</option>
+      <option value="202">Senegal&#233;s, Senegalense</option>
+      <option value="206">Singapurense</option>
+      <option value="207">Siriaco, Sirio</option>
+      <option value="208">Somal&#237;.</option>
+      <option value="211">Sudafricano</option>
+      <option value="212">Sudan&#233;s</option>
+      <option value="213">Sueco</option>
+      <option value="214">Suizo, Helv&#233;tico</option>
+      <option value="215">Surinam&#233;s</option>
+      <option value="218">Tailand&#233;s</option>
+      <option value="219">Taiwan&#233;s</option>
+      <option value="220">Tanzano</option>
+      <option value="221">Tayiko</option>
+      <option value="222">Timorense</option>
+      <option value="223">Togol&#233;s</option>
+      <option value="225">Tongano</option>
+      <option value="227">Trinitense</option>
+      <option value="229">Tunecino, Tunisense</option>
+      <option value="230">Turco, Otomano</option>
+      <option value="231">Turcomano</option>
+      <option value="232">Tuvaluano</option>
+      <option value="233">Ucraniano</option>
+      <option value="234">Ugand&#233;s</option>
+      <option value="235">Uruguayo</option>
+      <option value="236">Uzbeko</option>
+      <option value="238">Venezolano</option>
+      <option value="239">Vietnamita, Vietnam&#233;s</option>
+      <option value="241">Yemen&#237;</option>
+      <option value="242">Yibutiano</option>
+      <option value="243">Zaire&#241;o</option>
+      <option value="244">Zambiano</option>
+      <option value="246">Birmano</option>
+      <option value="247">Checoslovaco</option>
+      <option value="248">Escoc&#233;s</option>
+      <option value="249">Holand&#233;s, Neerland&#233;s</option>
+      <option value="250">Ingl&#233;s, Anglo, Brit&#225;nico, Britano</option>
+      <option value="251">Norirland&#233;s</option>
+      <option value="252">Yugoslavo</option>
+      <option value="253">Zimbabuense, Rodesiano</option>
+
+              </select>
+            </td>
+          </tr>
+          <tr class="fila8">
+            <td>
+              Estado civil:
+            </td>
+            <td>
+              <select class="estadoCvil" name="">
+                <option value="estadoCivil">Soltero</option>
+                <option value="estadoCivil">Casado</option>
+                <option value="estadoCivil">Divorciado</option>
+                <option value="estadoCivil">Union libre</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="fila9">
+            <td>
+              Lugar residencia
+            </td>
+            <td class="dropdown">
+
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Provincia
+          <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">San Jose</a></li>
+          <li><a href="#">Alajuela</a></li>
+          <li><a href="#">Cartago</a></li>
+          <li><a href="#">Heredia</a></li>
+          <li><a href="#">Guanacaste</a></li>
+          <li><a href="#">Puntarenas</a></li>
+          <li><a href="#">Limon</a></li>
+          </ul>
+        </td>
+            <td class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Canton
+      <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+      <li><a href="#">San Jose</a></li>
+      <li><a href="#">Alajuela</a></li>
+      <li><a href="#">Cartago</a></li>
+      <li><a href="#">Heredia</a></li>
+      <li><a href="#">Guanacaste</a></li>
+      <li><a href="#">Puntarenas</a></li>
+      <li><a href="#">Limon</a></li>
+      </ul>
+
+    </td>
+    <td class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  Distrito
+  <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  <li><a href="#">San Jose</a></li>
+  <li><a href="#">Alajuela</a></li>
+  <li><a href="#">Cartago</a></li>
+  <li><a href="#">Heredia</a></li>
+  <li><a href="#">Guanacaste</a></li>
+  <li><a href="#">Puntarenas</a></li>
+  <li><a href="#">Limon</a></li>
+  </ul>
+</td>
+            </tr>
+            <tr class="fila10">
+              <td>
+                Direccion exacta:
+              </td>
+              <td>
+                <input type="textarea" name="name" value="">
+              </td>
+            </tr>
+          <tr class="fila11">
+          <td>
+            Telefono:
+          </td>
+          <td>
+              <input type="text" name="telefono" value="">
+          </td>
+          </tr>
+          <tr class="fila12">
+            <td>
+              Correo electronico:
+            </td>
+            <td>
+              <input type="email" name="name" value="">
+            </td>
+          </tr>
+
+        </table>
+
+      </form>
+    </div>
+
+  </body>
+</html>
