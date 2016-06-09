@@ -49,12 +49,6 @@ create table main_empresa (
   constraint pk_main_empresa primary key (id)
 );
 
-create table main_profesional (
-  id                            bigint auto_increment not null,
-  buscar                        varchar(255),
-  constraint pk_main_profesional primary key (id)
-);
-
 create table profesional (
   id                            bigint auto_increment not null,
   nombre                        varchar(255),
@@ -84,8 +78,6 @@ drop table if exists estudiante;
 drop table if exists login;
 
 drop table if exists main_empresa;
-
-drop table if exists main_profesional;
 
 drop table if exists profesional;
 

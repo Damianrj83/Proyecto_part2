@@ -40,15 +40,13 @@ public class HomeController extends Controller {
     public Result crearRegistroPost() {
         Form<CreateAccount> pregForm = formFactory.form(CreateAccount.class).bindFromRequest();
         if (pregForm.hasErrors()) {
-            return badRequest(registro.render("Encontramos errores",
-                    pregForm, routes.HomeController.index()));
+            return badRequest(registro.render("Encontramos errores", pregForm, routes.HomeController.index()));
         } else {
             CreateAccount preg = pregForm.get();
             preg.save();
             pregForm = formFactory.form(CreateAccount.class);
         }
-        return ok(registro.render("Recepción de formulario correcto.", pregForm,
-                routes.HomeController.crearRegistroPost()));
+        return ok(registro.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearRegistroPost()));
     }
     
     //Login
@@ -61,15 +59,15 @@ public class HomeController extends Controller {
     public Result crearSesionPost() {
         Form<Login> pregForm = formFactory.form(Login.class).bindFromRequest();
         if (pregForm.hasErrors()) {
-            return badRequest(login.render("Encontramos errores",
-                    pregForm, routes.HomeController.index()));
+            return badRequest(login.render("Encontramos errores", pregForm, routes.HomeController.index()));
         } else {
             Login preg = pregForm.get();
             preg.save();
             pregForm = formFactory.form(Login.class);
         }
-        return ok(login.render("Recepción de formulario correcto.", pregForm,
-                routes.HomeController.crearSesionPost()));
+        return ok(login.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearSesionPost()));
+        //la ventana login.scala.html va a recibir 3 parametros(String message, form(objeto), ruta)=
+        //@(message: String,  searchForm: Form[CreateAccount], postUrl: play.api.mvc.Call)
     }
     
     
