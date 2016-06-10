@@ -52,13 +52,14 @@ public class HomeController extends Controller {
             preg.save();
             pregForm = formFactory.form(CreateAccount.class);
             //IF para comprobar el tipoUsuario
-            if(crearCuenta.tipoUsuario == "Profesional"){
-                //AQUI VA REDIRECCIONAMIENTO
-                return redirect(routes.ProfesionalController.crearMainGet());
-            }if(crearCuenta.tipoUsuario == "Empresa"){
-                //AQUI VA REDIRECCIONAMIENTO
-                return redirect(routes.EmpresaController.crearMainEmpresaGet());
-            }
+           
+//            if(crearCuenta.tipoUsuario == "Profesional"){
+//                //AQUI VA REDIRECCIONAMIENTO
+//                return redirect(routes.ProfesionalController.crearMainGet());
+//            }if(crearCuenta.tipoUsuario == "Empresa"){
+//                //AQUI VA REDIRECCIONAMIENTO
+//                return redirect(routes.EmpresaController.crearMainEmpresaGet());
+//            }
             //AQUI VA REDIRECCIONAMIENTO, redireccionar a 
         }//Fin if error
         return ok(registro.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearRegistroPost()));
