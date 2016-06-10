@@ -11,6 +11,8 @@ import models.Login;
 import play.data.FormFactory;
 import play.data.validation.Constraints;
 import views.html.*;
+import controllers.ProfesionalController;
+import controllers.EmpresaController;
 
 
 /**
@@ -27,6 +29,9 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
+    int error1;
+    int error2;
+    CreateAccount crearCuenta;
     public Result index() {
         return ok(index.render("LINK-JOB"));
     }
@@ -40,12 +45,22 @@ public class HomeController extends Controller {
     public Result crearRegistroPost() {
         Form<CreateAccount> pregForm = formFactory.form(CreateAccount.class).bindFromRequest();
         if (pregForm.hasErrors()) {
+            error2 =1;
             return badRequest(registro.render("Encontramos errores", pregForm, routes.HomeController.index()));
-        } else {
+        } if(error2!=1) {
             CreateAccount preg = pregForm.get();
             preg.save();
             pregForm = formFactory.form(CreateAccount.class);
-        }
+            //IF para comprobar el tipoUsuario
+            if(crearCuenta.tipoUsuario == "Profesional"){
+                //AQUI VA REDIRECCIONAMIENTO
+                return redirect(routes.ProfesionalController.crearMainGet());
+            }if(crearCuenta.tipoUsuario == "Empresa"){
+                //AQUI VA REDIRECCIONAMIENTO
+                return redirect(routes.EmpresaController.crearMainEmpresaGet());
+            }
+            //AQUI VA REDIRECCIONAMIENTO, redireccionar a 
+        }//Fin if error
         return ok(registro.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearRegistroPost()));
     }
     
@@ -59,11 +74,15 @@ public class HomeController extends Controller {
     public Result crearSesionPost() {
         Form<Login> pregForm = formFactory.form(Login.class).bindFromRequest();
         if (pregForm.hasErrors()) {
+             error1 =1;
             return badRequest(login.render("Encontramos errores", pregForm, routes.HomeController.index()));
-        } else {
+            
+        } if(error1!=1) {
             Login preg = pregForm.get();
             preg.save();
             pregForm = formFactory.form(Login.class);
+            //AQUI VA REDIRECCIONAMIENTO, redireccionar a 
+            return redirect(routes.ProfesionalController.crearMainGet());
         }
         return ok(login.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearSesionPost()));
         //la ventana login.scala.html va a recibir 3 parametros(String message, form(objeto), ruta)=
