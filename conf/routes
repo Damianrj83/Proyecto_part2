@@ -19,5 +19,7 @@ GET		/perfilProfesional			controllers.ProfesionalController.crearMainGet()
 
 GET		/perfilEmpresa			    controllers.EmpresaController.crearMainEmpresaGet()	
 
+GET		/curriculumPro				controllers.CurriculumProfesionalController.crearCurriculumProfesionalGet()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
