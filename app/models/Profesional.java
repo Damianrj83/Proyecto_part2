@@ -29,7 +29,9 @@ public class Profesional extends Model {
     @Id
     @Constraints.Min(10)
     public Long id;
-
+    
+    @Formats.DateTime(pattern="dd/MM/yyyy")
+    public Date dueDate = new Date();
     
      @Constraints.Required
      public String cedula;
@@ -46,8 +48,8 @@ public class Profesional extends Model {
      @Constraints.Required
     public boolean genero;
      
-     @Constraints.Required
-    public String fechaNacimiento;
+//     @Constraints.Required
+//    public String fechaNacimiento;
      
      @Constraints.Required
     public String nacionalidad;
@@ -68,6 +70,9 @@ public class Profesional extends Model {
     @Constraints.Required
     public String telefono2;
         
+    
+     @Constraints.Required
+    public String ;
 
     public static Finder<Long, Profesional> find = new Finder<Long,Profesional>(Profesional.class);
 }

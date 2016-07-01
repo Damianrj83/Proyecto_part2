@@ -37,12 +37,12 @@ create table main_empresa (
 create table profesional (
   id                            bigint auto_increment not null,
   create_account_id             bigint,
+  due_date                      datetime(6),
   cedula                        varchar(255),
   nombre                        varchar(255),
   apellido1                     varchar(255),
   apellido2                     varchar(255),
   genero                        tinyint(1) default 0,
-  fecha_nacimiento              varchar(255),
   nacionalidad                  varchar(255),
   lugar_residencia              varchar(255),
   direccion_exacta              varchar(255),

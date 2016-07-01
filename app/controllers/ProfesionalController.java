@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Inject;
+import models.Cuenta;
 import models.Profesional;
 import play.data.Form;
 import play.mvc.*;
@@ -59,6 +60,8 @@ public class ProfesionalController extends Controller {
         return ok(curriculumProfesional.render("Recepción de formulario correcto.", infoDescripcion, routes.ProfesionalController.crearCurriculumPost()));//corregir, aqui va redirecc
     }  
       
+
+
       
 //      public Result crearConfigCuentaGet() {
 //        return ok(cuentaConfig.render("Formulario", routes.ProfesionalController.crearConfigCuentaGet()));
@@ -69,4 +72,19 @@ public class ProfesionalController extends Controller {
 //    }     
   
     //@routes.ProfesionalController.crearCurriculumGet()
+    
+    
+    
+    //    public Result upload() {
+//    MultipartFormData<File> body = request().body().asMultipartFormData();
+//    FilePart<Cuenta> picture = body.getFile("picture");
+//    if (picture != null) {
+//        String fileName = picture.getFilename();
+//        String contentType = picture.getContentType();
+//        File file = picture.getFile();
+//        return ok("File uploaded");
+//    } else {
+//        flash("error", "Missing file");
+//        return badRequest();
+//    }
 }///Fin clase

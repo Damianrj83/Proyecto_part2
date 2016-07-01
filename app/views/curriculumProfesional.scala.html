@@ -1,7 +1,7 @@
 @(message: String, searchForm: Form[Profesional], postUrl: play.api.mvc.Call)
 @import helper._
 
-@main("message") {
+@main(message) {
 
 
     <div class="alert"> @message </div>
@@ -41,12 +41,15 @@
               </div>
               
               <div class="col-md-2">
-                @inputText(searchForm("genero"),'_label -> "Genero",'class -> "form-control")
+               @input(searchForm("genero")) { (id, name, value, args) =>   <select name="@name" id="@id" @toHtmlArgs(args)>
+                                                                         <option value="Masculino" selected>Masculino</option>
+                                                                         <option value="Femenino">Femenino</option>
+                                                                        </select>}
             </div>
               
-              
-              <div class="col-md-2">
-                @inputText(searchForm("fechaNacimiento"),'_label -> "Fecha de naciemiento",'class -> "form-control")
+              <div class="col-md-3">
+                @inputText(searchForm("dueDate"),'_label -> "Fecha de nacimiento",'class -> "form-control")
+    
             </div>
               
               
@@ -59,6 +62,17 @@
                 @inputText(searchForm("cedula"),'_label -> "Cedula",'class -> "form-control")
             </div>
               
+               <div class="col-md-3">
+                @inputText(searchForm("lugarResidencia"),'_label -> "Ludar de Residencia",'class -> "form-control")
+            </div>
+              
+             <div class="col-md-3">
+                @inputText(searchForm("direccionExacta"),'_label -> "Direccion Exacta",'class -> "form-control")
+            </div>
+              
+             <div class="col-md-2">
+                @inputText(searchForm("telefono1"),'_label -> "Telefono",'class -> "form-control")
+            </div>  
 
         </div>
           
@@ -79,6 +93,9 @@
 		  
 		  <!--CODE HERE(FORMULARIO)-->
 		  
+                  
+                  
+                  
 		  </div><!--Fin formulario-->
     </div>
   </div<!--FIN COLLAPSE2-->
@@ -146,10 +163,10 @@
   
   
   </fieldset>
-    
+   
      <div class="form-actions text-center">
         <input type="submit" class="btn btn-success" value="Guardar" >
-        
+           
     </div>
    
    }  
