@@ -55,7 +55,7 @@ public class EmpresaController extends Controller {
             infoDescrip.save();
             infoDescripcion = formFactory.form(Empresa.class);
         }//Fin if error
-        return ok(descripcionEmpresa.render("Recepción de formulario correcto.", infoDescripcion, routes.EmpresaController.crearDescripcionGet()));//corregir, aqui va redirecc
+        return ok(descripcionEmpresa.render("Recepción de formulario correcto.", infoDescripcion, routes.EmpresaController.crearDescripcionPost()));//corregir, aqui va redirecc
     }///
 
 }

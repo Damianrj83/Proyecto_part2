@@ -30,6 +30,10 @@ public class Profesional extends Model {
     @Constraints.Min(10)
     public Long id;
 
+    
+     @Constraints.Required
+     public String cedula;
+    
 	@Constraints.Required
     public String nombre;
 

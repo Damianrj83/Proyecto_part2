@@ -25,6 +25,7 @@ import views.html.*;
  */
 public class ProfesionalController extends Controller {
 
+    int error1;
     @Inject
     FormFactory formFactory;
     /**
@@ -43,6 +44,20 @@ public class ProfesionalController extends Controller {
             Form<Profesional> profesionalForm = formFactory.form(Profesional.class);
         return ok(curriculumProfesional.render("Formulario", profesionalForm, routes.ProfesionalController.crearCurriculumGet()));
     }
+      
+      
+    public Result crearCurriculumPost() {
+        Form<Profesional> infoDescripcion = formFactory.form(Profesional.class).bindFromRequest();
+        if (infoDescripcion.hasErrors()) {
+            error1 =1;
+            return badRequest(curriculumProfesional.render("Encontramos errores", infoDescripcion, routes.ProfesionalController.crearCurriculumGet()));
+        } if(error1!=1) {//Si no tiene errores
+            Profesional infoDescrip = infoDescripcion.get();
+            infoDescrip.save();
+            infoDescripcion = formFactory.form(Profesional.class);
+        }//Fin if error
+        return ok(curriculumProfesional.render("Recepción de formulario correcto.", infoDescripcion, routes.ProfesionalController.crearCurriculumPost()));//corregir, aqui va redirecc
+    }  
       
       
 //      public Result crearConfigCuentaGet() {

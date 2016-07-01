@@ -19,7 +19,7 @@ GET		/perfilProfesional			controllers.ProfesionalController.crearMainGet()
 GET		/perfilEmpresa			    controllers.EmpresaController.crearMainEmpresaGet()	
 
 GET		/curriculumPro				controllers.ProfesionalController.crearCurriculumGet()
-
+POST	/curriculumPro				controllers.ProfesionalController.crearCurriculumPost()
 
 #GET	/cuenta						controllers.ProfesionalController.crearConfigCuentaGet()
 

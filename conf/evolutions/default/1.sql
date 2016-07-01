@@ -37,6 +37,7 @@ create table main_empresa (
 create table profesional (
   id                            bigint auto_increment not null,
   create_account_id             bigint,
+  cedula                        varchar(255),
   nombre                        varchar(255),
   apellido1                     varchar(255),
   apellido2                     varchar(255),
