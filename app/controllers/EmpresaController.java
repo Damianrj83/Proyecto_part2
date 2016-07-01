@@ -14,7 +14,7 @@ import play.mvc.*;
 import play.data.FormFactory;
 import play.data.validation.Constraints;
 import views.html.*;
-import controllers.ProfesionalController;
+import models.Empresa;
 
 
 /**
@@ -34,6 +34,11 @@ public class EmpresaController extends Controller {
    public Result crearMainEmpresaGet() {
         return ok(mainEmpresa.render("Formulario", routes.EmpresaController.crearMainEmpresaGet()));
     }
+   
+   public Result crearDescripcionGet(){
+        Form<Empresa> empresaForm = formFactory.form(Empresa.class);
+       return ok(descripcionEmpresa.render("Descripcion",empresaForm, routes.EmpresaController.crearDescripcionGet()));
+   }///
 
 }
 

@@ -13,7 +13,7 @@ import play.data.validation.Constraints;
 import views.html.*;
 import controllers.ProfesionalController;
 import controllers.EmpresaController;
-import controllers.CurriculumProfesionalController;
+
 
 
 /**
@@ -98,7 +98,7 @@ public class HomeController extends Controller {
             }
                       
            // return redirect(routes.ProfesionalController.crearMainGet());// aqui va
-        }//CurriculumProfesionalController.crearCurriculumProfesionalGet()
+        }//ProfesionalController.crearCurriculumProfesionalGet()
         return ok(login.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearSesionPost()));
         //la ventana login.scala.html va a recibir 3 parametros(String message, form(objeto), ruta)=
         //@(message: String,  searchForm: Form[CreateAccount], postUrl: play.api.mvc.Call)

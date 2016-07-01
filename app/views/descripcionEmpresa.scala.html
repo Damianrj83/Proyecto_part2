@@ -1,0 +1,49 @@
+@(message: String,  searchForm: Form[Empresa], postUrl: play.api.mvc.Call)
+@import helper._
+
+@main(message) {
+
+
+<div class="alert"> @message </div>
+@form(postUrl, 'class -> "form") {
+    @if(searchForm.hasGlobalErrors) {
+        <div class="alert alert-danger">
+            @searchForm.globalError.message
+        </div>
+    }
+
+    <fieldset>
+
+        <div class="row">
+            <div class="col-md-2"> 
+                @inputText(searchForm("nombre"),'_label -> "Empresa",'class -> "form-control")</div>
+                
+            <div class="col-md-4">
+                @inputPassword(searchForm("cfi"),'_label -> "CFI",'class -> "form-control")
+            </div>
+            
+            
+            <div class="col-md-4">
+                @textarea(searchForm("descripcion"),'_label -> "Descripcion",'class -> "form-control")
+            </div>
+
+        </div>
+        
+        <div class="row">
+           
+        
+               
+             </div>
+        
+        
+
+    </fieldset>
+    
+     <div class="form-actions text-center">
+        <input type="submit" class="btn btn-success" value="Guardar" >
+        
+    </div>
+    
+    }
+    
+}
