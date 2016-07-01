@@ -54,6 +54,9 @@ create table profesional (
   ano_titulo                    varchar(255),
   nombre_titulo                 varchar(255),
   institucion_titulo            varchar(255),
+  salario_aspirar               varchar(255),
+  residencia_preferida          varchar(255),
+  experiencia_laboral           varchar(255),
   constraint uq_profesional_create_account_id unique (create_account_id),
   constraint pk_profesional primary key (id)
 );

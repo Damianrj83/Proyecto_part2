@@ -79,13 +79,22 @@ public class Profesional extends Model {
     
     public String estudia;
     
+    @Constraints.Required
     public String anoTitulo;
     
+    @Constraints.Required
      public String nombreTitulo;
-     
+    
+    
+     @Constraints.Required
       public String institucionTitulo;
     
-    
+     public String salarioAspirar;
+     
+     public String residenciaPreferida;
+     
+     public String experienciaLaboral;
+
 
     public static Finder<Long, Profesional> find = new Finder<Long,Profesional>(Profesional.class);
 }

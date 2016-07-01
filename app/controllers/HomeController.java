@@ -82,8 +82,9 @@ public class HomeController extends Controller {
             
         } if(error1!=1) {// Si no tiene errores
             CreateAccount preg = pregForm.get();
-//          CreateAccount.authenticate(preg.email, preg.contrasena);//devuelve true o false //Va y lo busca en la base de datos para comprobar las existencia del email y contrasena
-//             session(preg.email, preg.contrasena);
+            boolean sesion;
+          //CreateAccount.authenticate(preg.email, preg.contrasena);//devuelve true o false //Va y lo busca en la base de datos para comprobar las existencia del email y contrasena
+          //   session(preg.email, preg.contrasena) ;
              //preg.save();//la informacion no se tiene que guardar sino se tiene que comparar, ya que al momento de Registrarse
              //esa accion ya se realizo, por tanto solo se autentica 
             pregForm = formFactory.form(CreateAccount.class);
