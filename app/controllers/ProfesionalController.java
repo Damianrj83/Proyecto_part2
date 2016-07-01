@@ -39,7 +39,8 @@ public class ProfesionalController extends Controller {
     }
      
       public Result crearCurriculumGet() {
-        return ok(curriculumProfesional.render("Formulario", routes.ProfesionalController.crearCurriculumGet()));
+            Form<Profesional> profesionalForm = formFactory.form(Profesional.class);
+        return ok(curriculumProfesional.render("Formulario", profesionalForm, routes.ProfesionalController.crearCurriculumGet()));
     }
       
       
@@ -52,4 +53,4 @@ public class ProfesionalController extends Controller {
 //    }     
   
     //@routes.ProfesionalController.crearCurriculumGet()
-}
+}///Fin clase

@@ -1,7 +1,18 @@
-@(message: String, postUrl: play.api.mvc.Call)
+@(message: String, searchForm: Form[Profesional], postUrl: play.api.mvc.Call)
 @import helper._
 
 @main("message") {
+
+
+    <div class="alert"> @message </div>
+@form(postUrl, 'class -> "form") {
+    @if(searchForm.hasGlobalErrors) {
+        <div class="alert alert-danger">
+            @searchForm.globalError.message
+        </div>
+    }
+
+    <fieldset>
      
       	<div class="panel-group" id="accordion"><!--INICIA COLLAPSE1-->
   <div class="panel panel-default">
@@ -95,6 +106,14 @@
       </div><!--Fin formulario-->
     </div>
   </div><!--FIN COLLAPSE6-->
-   
+  
+  
+  </fieldset>
     
+     <div class="form-actions text-center">
+        <input type="submit" class="btn btn-success" value="Guardar" >
+        
+    </div>
+   
+   }  
 }
