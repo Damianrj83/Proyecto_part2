@@ -50,6 +50,10 @@ create table profesional (
   telefono2                     varchar(255),
   nivel_academico               varchar(255),
   tipo_de_colegio               varchar(255),
+  estudia                       varchar(255),
+  ano_titulo                    varchar(255),
+  nombre_titulo                 varchar(255),
+  institucion_titulo            varchar(255),
   constraint uq_profesional_create_account_id unique (create_account_id),
   constraint pk_profesional primary key (id)
 );

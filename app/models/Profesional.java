@@ -77,7 +77,14 @@ public class Profesional extends Model {
     @Constraints.Required
     public String tipoDeColegio;
     
-    public String estadoEstudio;
+    public String estudia;
+    
+    public String anoTitulo;
+    
+     public String nombreTitulo;
+     
+      public String institucionTitulo;
+    
     
 
     public static Finder<Long, Profesional> find = new Finder<Long,Profesional>(Profesional.class);
