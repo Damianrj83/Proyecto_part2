@@ -25,7 +25,24 @@
     <div id="collapse1" class="panel-collapse collapse in">
       <div class="panel-body"><!--CODE HERE(FORMULARIO)-->
 		  
-	
+          
+          
+	  <div class="row">
+            <div class="col-md-2"> 
+                @inputText(searchForm("nombre"),'_label -> "Nombre",'class -> "form-control")</div>
+                
+            <div class="col-md-4">
+                @inputText(searchForm("apellido1"),'_label -> "Appellido 1",'class -> "form-control")
+            </div>
+              
+              <div class="row">
+                  <div class="col-md-4">@inputText(searchForm("apellido2"),'_label -> "Appellido 2",'class -> "form-control")</div>
+                  
+              </div>
+
+        </div>
+          
+          
       
       </div><!--Fin formulario-->
     </div>

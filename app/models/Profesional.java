@@ -63,16 +63,6 @@ public class Profesional extends Model {
     
     @Constraints.Required
     public String telefono2;
-     
-    
-     
-     
-     
-     
-     
-     
-     
-        
         
 
     public static Finder<Long, Profesional> find = new Finder<Long,Profesional>(Profesional.class);
