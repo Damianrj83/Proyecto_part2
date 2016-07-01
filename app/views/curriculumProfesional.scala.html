@@ -57,7 +57,9 @@
                 @inputText(searchForm("nacionalidad"),'_label -> "Nacionalidad",'class -> "form-control")
             </div>
               
+              </div>
               
+          <div class="row">
               <div class="col-md-2">
                 @inputText(searchForm("cedula"),'_label -> "Cedula",'class -> "form-control")
             </div>
@@ -65,6 +67,8 @@
                <div class="col-md-3">
                 @inputText(searchForm("lugarResidencia"),'_label -> "Ludar de Residencia",'class -> "form-control")
             </div>
+              
+              </div>
               
              <div class="col-md-3">
                 @inputText(searchForm("direccionExacta"),'_label -> "Direccion Exacta",'class -> "form-control")
@@ -74,7 +78,7 @@
                 @inputText(searchForm("telefono1"),'_label -> "Telefono",'class -> "form-control")
             </div>  
 
-        </div>
+        
           
           
       
@@ -92,9 +96,55 @@
       <div class="panel-body">
 		  
 		  <!--CODE HERE(FORMULARIO)-->
-		  
+                  <div class="row">
+                      
+                 
+                  
+                      
+                  @input(searchForm("nivelAcademico")) { (id, name, value, args) =>   <select name="@name" id="@id" @toHtmlArgs(args)>
+                                                                                        <option value="Profesional" selected>Profesional</option>
+                                                                                <option value="Empresa">Empresa</option>
+                                                                                <option value="0">Ning&#250;n grado</option>
+	<option value="1">Primaria incompleta</option>
+	<option value="2">Primaria completa</option>
+	<option value="3">Secundaria acad&#233;mica incompleta</option>
+	<option value="14">Tercer a&#241;o de secundaria (Noveno a&#241;o aprobado)</option>
+	<option value="4">Secundaria acad&#233;mica completa</option>
+	<option value="5">Secundaria t&#233;cnica incompleta</option>
+	<option value="6">Secundaria t&#233;cnica completa</option>
+	<option selected="selected" value="7">Universitaria incompleta</option>
+	<option value="8">Diplomado o T&#233;cnico universitario</option>
+	<option value="9">Bachillerato universitario</option>
+	<option value="10">Licenciatura</option>
+	<option value="11">Maestr&#237;a sin licenciatura</option>
+	<option value="12">Maestr&#237;a con licenciatura</option>
+	<option value="13">Doctorado</option>
+
+                                                                           </select>}  
+                                                                           
+               <div class="col-md-3">
+                @inputText(searchForm("tipoDeColegio"),'_label -> "Tipo De Colegio",'class -> "form-control")
+            </div>                                                            
+                                                                           
+             </div>
                   
                   
+        <div class="row">
+                      
+                  <div class="col-md-2">
+               @input(searchForm("estadoEstudio")) { (id, name, value, args) =>   <select name="@name" id="@id" @toHtmlArgs(args)>
+                                                                         <option value="Si" selected>Si</option>
+                                                                         <option value="No">No</option>
+                                                                        </select>}
+            </div>     
+               
+                      
+                  </div>
+                      
+                  
+                  
+                  
+                  </div>
                   
 		  </div><!--Fin formulario-->
     </div>

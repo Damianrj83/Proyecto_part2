@@ -48,6 +48,8 @@ create table profesional (
   direccion_exacta              varchar(255),
   telefono1                     varchar(255),
   telefono2                     varchar(255),
+  nivel_academico               varchar(255),
+  tipo_de_colegio               varchar(255),
   constraint uq_profesional_create_account_id unique (create_account_id),
   constraint pk_profesional primary key (id)
 );

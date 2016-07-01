@@ -48,16 +48,16 @@ public class ProfesionalController extends Controller {
       
       
     public Result crearCurriculumPost() {
-        Form<Profesional> infoDescripcion = formFactory.form(Profesional.class).bindFromRequest();
-        if (infoDescripcion.hasErrors()) {
+        Form<Profesional> descripForm = formFactory.form(Profesional.class).bindFromRequest();
+        if (descripForm.hasErrors()) {
             error1 =1;
-            return badRequest(curriculumProfesional.render("Encontramos errores", infoDescripcion, routes.ProfesionalController.crearCurriculumGet()));
+            return badRequest(curriculumProfesional.render("Encontramos errores", descripForm, routes.ProfesionalController.crearCurriculumGet()));
         } if(error1!=1) {//Si no tiene errores
-            Profesional infoDescrip = infoDescripcion.get();
+            Profesional infoDescrip = descripForm.get();
             infoDescrip.save();
-            infoDescripcion = formFactory.form(Profesional.class);
+            descripForm = formFactory.form(Profesional.class);
         }//Fin if error
-        return ok(curriculumProfesional.render("Recepción de formulario correcto.", infoDescripcion, routes.ProfesionalController.crearCurriculumPost()));//corregir, aqui va redirecc
+        return ok(curriculumProfesional.render("Recepción de formulario correcto.", descripForm, routes.ProfesionalController.crearCurriculumPost()));//corregir, aqui va redirecc
     }  
       
 
