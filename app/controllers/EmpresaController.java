@@ -23,6 +23,8 @@ import models.Empresa;
  */
 public class EmpresaController extends Controller {
 
+    
+    int error1;
     @Inject
     FormFactory formFactory;
     /**
@@ -35,10 +37,26 @@ public class EmpresaController extends Controller {
         return ok(mainEmpresa.render("Formulario", routes.EmpresaController.crearMainEmpresaGet()));
     }
    
+   
    public Result crearDescripcionGet(){
         Form<Empresa> empresaForm = formFactory.form(Empresa.class);
        return ok(descripcionEmpresa.render("Descripcion",empresaForm, routes.EmpresaController.crearDescripcionGet()));
    }///
+   
+   
+   
+   public Result crearDescripcionPost() {
+        Form<Empresa> infoDescripcion = formFactory.form(Empresa.class).bindFromRequest();
+        if (infoDescripcion.hasErrors()) {
+            error1 =1;
+            return badRequest(descripcionEmpresa.render("Encontramos errores", infoDescripcion, routes.EmpresaController.crearDescripcionGet()));
+        } if(error1!=1) {//Si no tiene errores
+            Empresa infoDescrip = infoDescripcion.get();
+            infoDescrip.save();
+            infoDescripcion = formFactory.form(Empresa.class);
+        }//Fin if error
+        return ok(descripcionEmpresa.render("Recepción de formulario correcto.", infoDescripcion, routes.EmpresaController.crearDescripcionGet()));//corregir, aqui va redirecc
+    }///
 
 }
 
