@@ -28,21 +28,6 @@ create table empresa (
   constraint pk_empresa primary key (id)
 );
 
-create table estudiante (
-  id                            bigint auto_increment not null,
-  nombre                        varchar(255),
-  carnet                        varchar(255),
-  correo                        varchar(255),
-  constraint pk_estudiante primary key (id)
-);
-
-create table login (
-  id                            bigint auto_increment not null,
-  contrasena                    varchar(255),
-  email                         varchar(255),
-  constraint pk_login primary key (id)
-);
-
 create table main_empresa (
   id                            bigint auto_increment not null,
   buscar                        varchar(255),
@@ -51,6 +36,7 @@ create table main_empresa (
 
 create table profesional (
   id                            bigint auto_increment not null,
+  create_account_id             bigint,
   nombre                        varchar(255),
   apellido1                     varchar(255),
   apellido2                     varchar(255),
@@ -61,21 +47,22 @@ create table profesional (
   direccion_exacta              varchar(255),
   telefono1                     varchar(255),
   telefono2                     varchar(255),
+  constraint uq_profesional_create_account_id unique (create_account_id),
   constraint pk_profesional primary key (id)
 );
 
+alter table profesional add constraint fk_profesional_create_account_id foreign key (create_account_id) references create_account (id) on delete restrict on update restrict;
+
 
 # --- !Downs
+
+alter table profesional drop foreign key fk_profesional_create_account_id;
 
 drop table if exists create_account;
 
 drop table if exists cuenta;
 
 drop table if exists empresa;
-
-drop table if exists estudiante;
-
-drop table if exists login;
 
 drop table if exists main_empresa;
 

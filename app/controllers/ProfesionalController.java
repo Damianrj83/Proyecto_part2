@@ -37,7 +37,19 @@ public class ProfesionalController extends Controller {
      public Result crearMainGet() {
         return ok(mainProfesional.render("Formulario", routes.ProfesionalController.crearMainGet()));
     }
+     
+      public Result crearCurriculumGet() {
+        return ok(curriculumProfesional.render("Formulario", routes.ProfesionalController.crearCurriculumGet()));
+    }
+      
+      
+//      public Result crearConfigCuentaGet() {
+//        return ok(cuentaConfig.render("Formulario", routes.ProfesionalController.crearConfigCuentaGet()));
+//    }
 
+//      public Result crearCurriculumGet() {
+//        return ok(redConfig.render("Formulario", routes.ProfesionalController.crearConfigRedGet()));
+//    }     
   
-    
+    //@routes.ProfesionalController.crearCurriculumGet()
 }

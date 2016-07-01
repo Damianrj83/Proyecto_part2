@@ -32,7 +32,15 @@ public class CreateAccount extends Model {
    
     public String tipoUsuario;
         
-        
+         public static CreateAccount authenticate(String email, String pass) {
+        CreateAccount createAccount = find.where().eq("email", email).findUnique();
+        if (createAccount != null) {
+            if (pass== createAccount.contrasena) {
+                return createAccount;
+            }
+        }
+        return null;
+     }//Fin auth
 
     public static Finder<Long, CreateAccount> find = new Finder<Long,CreateAccount>(CreateAccount.class);
 }

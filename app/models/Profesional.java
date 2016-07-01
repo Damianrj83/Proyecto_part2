@@ -19,6 +19,13 @@ import play.data.validation.*;
 @Entity
 public class Profesional extends Model {
     
+    
+    @OneToOne()
+    @Constraints.Required
+    public CreateAccount createAccount;
+   // public Login login; nota: se borro el modelo Login, en caso de error restablecer
+    
+    
     @Id
     @Constraints.Min(10)
     public Long id;
