@@ -47,8 +47,8 @@ public class Profesional extends Model {
         @Constraints.Required
     public String apellido2;
         
-     @Constraints.Required
-    public boolean genero;
+    
+    public String genero;
      
 //     @Constraints.Required
 //    public String fechaNacimiento;
@@ -95,13 +95,17 @@ public class Profesional extends Model {
      
      public String residenciaPreferida;
      
-     public String Experiencia_Laboral;
+     @Constraints.Required
+     public String experienciaLaboral;
      
+     @Constraints.Required
      public String idiomas;
      
      public String otroIdioma;
      
      public String Conocimientos_No_Formales;
+     
+     
      
 
 

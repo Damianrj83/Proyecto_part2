@@ -60,7 +60,7 @@ create table profesional (
   nombre                        varchar(255),
   apellido1                     varchar(255),
   apellido2                     varchar(255),
-  genero                        tinyint(1) default 0,
+  genero                        varchar(255),
   nacionalidad                  varchar(255),
   lugar_residencia              varchar(255),
   direccion_exacta              varchar(255),

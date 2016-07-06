@@ -22,9 +22,10 @@ public class OfertaEmpresa extends Model {
     
     
     @Id
-    @Constraints.Min(10)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
     
+    @Constraints.Required
     public String cargo;
     
     @Constraints.Required

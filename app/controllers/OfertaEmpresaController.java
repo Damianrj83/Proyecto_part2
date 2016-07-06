@@ -41,10 +41,10 @@ public class OfertaEmpresaController extends Controller{
         if (ofertaForm.hasErrors()) {
             error1 =1;
             return badRequest(ofertaEmpresa.render("Encontramos errores", ofertaForm, routes.OfertaEmpresaController.crearOfertaGet()));
-        } if(error1!=1) {//Si no tiene errores
+        } else {//Si no tiene errores
             OfertaEmpresa infoDescrip = ofertaForm.get();//Obtiene lo escrito en el Form qur fue almacenado en el Objeto
             infoDescrip.save();//Guarda la informacion en la varible
-           ofertaForm = formFactory.form(OfertaEmpresa.class);// Guarda la informacion del Formulario en el Objeto
+            ofertaForm = formFactory.form(OfertaEmpresa.class);// Guarda la informacion del Formulario en el Objeto
         }//Fin if error
         return ok(ofertaEmpresa.render("Recepción de formulario correcto.", ofertaForm, routes.OfertaEmpresaController.crearOfertaPost()));//corregir, aqui va redirecc
     }  
