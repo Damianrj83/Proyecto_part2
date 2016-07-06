@@ -10,9 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Inject;
+//import javax.naming.spi.DirStateFactory.Result;
 import play.data.Form;
 import play.mvc.*;
-import models.CreateAccount;
 import models.OfertaEmpresa;
 //import models.Login;
 import play.data.FormFactory;
@@ -50,8 +50,40 @@ public class OfertaEmpresaController extends Controller{
     }  
    
    
+     public Result listarOfertas() {
+        List<OfertaEmpresa> ofertas = OfertaEmpresa.find.all();
+
+        return ok(ofertaPublicada.render("Listado de ofertas", ofertas));
+    }
    
-   
+     
+//      public Result editarOfertaGet(Long id) {
+//        OfertaEmpresa instancia = OfertaEmpresa.find.byId(id);
+//        Form<Pregunta> pregForm = formFactory.form(OfertaEmpresa.class).fill(instancia);
+//        return ok(ofertaEmpresa.render("Formulario de oferta",
+//                pregForm, routes.OfertaEmpresaController.editarOfertaPost(id)));
+//    }
+//
+//    public Result editarOfertaPost(Long id) {
+//        OfertaEmpresa instancia = OfertaEmpresa.find.byId(id);
+//        Form<OfertaEmpresa> pregForm = formFactory.form(OfertaEmpresa.class
+//        ).fill(instancia).bindFromRequest();
+//
+//        if (pregForm.hasErrors()) {
+//            return badRequest(ofertaEmpresa.render(
+//                    "Encontramos errores", pregForm,
+//                    routes.OfertaEmpresaController.editarOfertaPost(id)
+//            ));
+//        }
+//        
+//        OfertaEmpresa preg = pregForm.get();
+//        instancia.cargo = preg.cargo;
+//        instancia.tipo = preg.tipo;
+//        instancia.requerida = preg.requerida;
+//        instancia.textoAyuda = preg.textoAyuda;
+//        instancia.save();
+//        return redirect(routes.OfertaEmpresaController.listarOfertas());
+//    }
     
     
 }//Fin clase

@@ -1,0 +1,26 @@
+@(message: String,  ofertas: List[OfertaEmpresa])
+@import helper._
+
+
+@main(message) {
+    <h1> Lista de ofertas </h1>
+
+<ul class="list-group">
+@for(preg <- ofertas) {
+  <li class="list-group-item" >@preg.cargo 
+      
+      <div class="btn-group pull-right" role="group" aria-label="...">
+        <a href="@routes.HomeController.editarOfetaPost(preg.id)" 
+           class="btn btn-success">Ver</a>
+      </div>
+      
+      
+      
+      
+  </li>
+}
+</ul>
+
+    
+    
+}

@@ -60,4 +60,14 @@ public class OfertaEmpresa extends Model {
     
     
      public static Finder<Long, OfertaEmpresa> find = new Finder<Long,OfertaEmpresa>(OfertaEmpresa.class);
+     
+     
+     public static Map<String, String> preguntas() {
+        List<OfertaEmpresa> ofertas = OfertaEmpresa.find.all();
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
+        for(OfertaEmpresa set: ofertas) {
+            options.put(set.id.toString(), set.cargo.toString());
+        }
+        return options;
+    }///
 }

@@ -32,6 +32,8 @@ POST	/oferta						controllers.OfertaEmpresaController.crearOfertaPost()
 GET	    /cuenta						controllers.CuentaProfesionalController.crearConfigCuentaGet()
 POST	/cuenta						controllers.CuentaProfesionalController.crearConfigCuentaPost()
 
+GET		/oferta						controllers.OfertaEmpresaController.listarOfertas()
+
 
 GET		/editar/:id					controllers.ProfesionalController.editarCurriculumGet(id: Long)
 POST	/editar/:id					controllers.ProfesionalController.editarCurriculumPost(id: Long)
