@@ -36,7 +36,7 @@ GET		/oferta						controllers.OfertaEmpresaController.listarOfertas()
 
 
 GET		/ofertaVer					controllers.OfertaEmpresaController.editarOfertaGet(id: Long)
-POST	/ofertaVer					controllers.OfertaEmpresaController.editarOfertaGet(id: Long)	
+POST	/ofertaVer					controllers.OfertaEmpresaController.editarOfertaPost(id: Long)	
 
 
 GET		/editar/:id					controllers.ProfesionalController.editarCurriculumGet(id: Long)
