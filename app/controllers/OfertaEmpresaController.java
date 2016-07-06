@@ -81,7 +81,20 @@ public class OfertaEmpresaController extends Controller{
 //        instancia.empresa = preg.empresa;
 //        instancia.descripcionEmpleo = preg.descripcionEmpleo;
 //        instancia.referencia = preg.referencia;
-//        instancia.save();
+          
+//          instancia.tipoIndustria = preg.tipoIndustria;
+//          instancia.categoria = preg.categoria;
+//          instancia.nivel = preg.nivel;
+//          instancia.personalACargo = preg.personalACargo;
+//          
+//          
+//          instancia.vacantes = preg.vacantes;
+//          instancia.salario = preg.salario;
+//          instancia.estudiosMinimos = preg.estudiosMinimos;
+//          instancia.experienciaMinima = preg.experienciaMinima;
+//          instancia.requisitosMinimos = preg.requisitosMinimos;
+//          instancia.residenciaPreferencia = preg.residenciaPreferencia;
+//          instancia.save();
 //        return redirect(routes.OfertaEmpresaController.listarOfertas());
 //    }
     
