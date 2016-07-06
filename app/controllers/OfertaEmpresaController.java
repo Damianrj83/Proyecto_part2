@@ -81,7 +81,7 @@ public class OfertaEmpresaController extends Controller{
 //        instancia.empresa = preg.empresa;
 //        instancia.descripcionEmpleo = preg.descripcionEmpleo;
 //        instancia.referencia = preg.referencia;
-          
+//          
 //          instancia.tipoIndustria = preg.tipoIndustria;
 //          instancia.categoria = preg.categoria;
 //          instancia.nivel = preg.nivel;

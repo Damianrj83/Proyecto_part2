@@ -57,6 +57,8 @@ public class OfertaEmpresa extends Model {
     @Constraints.Required
     public String residenciaPreferencia;
     
+    public String salario;
+    
     
     
      public static Finder<Long, OfertaEmpresa> find = new Finder<Long,OfertaEmpresa>(OfertaEmpresa.class);
