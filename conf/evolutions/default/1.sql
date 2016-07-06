@@ -49,6 +49,7 @@ create table oferta_empresa (
   experiencia_minima            varchar(255),
   requisitos_minimos            varchar(255),
   residencia_preferencia        varchar(255),
+  salario                       varchar(255),
   constraint pk_oferta_empresa primary key (id)
 );
 

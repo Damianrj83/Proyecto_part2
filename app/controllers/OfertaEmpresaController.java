@@ -10,11 +10,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Inject;
-//import javax.naming.spi.DirStateFactory.Result;
 import play.data.Form;
 import play.mvc.*;
 import models.OfertaEmpresa;
-//import models.Login;
 import play.data.FormFactory;
 import play.data.validation.Constraints;
 import views.html.*;
@@ -57,46 +55,41 @@ public class OfertaEmpresaController extends Controller{
     }
    
      
-//      public Result editarOfertaGet(Long id) {
-//        OfertaEmpresa instancia = OfertaEmpresa.find.byId(id);
-//        Form<Pregunta> pregForm = formFactory.form(OfertaEmpresa.class).fill(instancia);
-//        return ok(ofertaEmpresa.render("Formulario de oferta",
-//                pregForm, routes.OfertaEmpresaController.editarOfertaPost(id)));
-//    }
-//
-//    public Result editarOfertaPost(Long id) {
-//        OfertaEmpresa instancia = OfertaEmpresa.find.byId(id);
-//        Form<OfertaEmpresa> pregForm = formFactory.form(OfertaEmpresa.class
-//        ).fill(instancia).bindFromRequest();
-//
-//        if (pregForm.hasErrors()) {
-//            return badRequest(ofertaEmpresa.render(
-//                    "Encontramos errores", pregForm,
-//                    routes.OfertaEmpresaController.editarOfertaPost(id)
-//            ));
-//        }
-//        
-//        OfertaEmpresa preg = pregForm.get();
-//        instancia.cargo = preg.cargo;
-//        instancia.empresa = preg.empresa;
-//        instancia.descripcionEmpleo = preg.descripcionEmpleo;
-//        instancia.referencia = preg.referencia;
-//          
-//          instancia.tipoIndustria = preg.tipoIndustria;
-//          instancia.categoria = preg.categoria;
-//          instancia.nivel = preg.nivel;
-//          instancia.personalACargo = preg.personalACargo;
-//          
-//          
-//          instancia.vacantes = preg.vacantes;
-//          instancia.salario = preg.salario;
-//          instancia.estudiosMinimos = preg.estudiosMinimos;
-//          instancia.experienciaMinima = preg.experienciaMinima;
-//          instancia.requisitosMinimos = preg.requisitosMinimos;
-//          instancia.residenciaPreferencia = preg.residenciaPreferencia;
-//          instancia.save();
-//        return redirect(routes.OfertaEmpresaController.listarOfertas());
-//    }
+      public Result editarOfertaGet(Long id) {
+        OfertaEmpresa instancia = OfertaEmpresa.find.byId(id);
+        Form<OfertaEmpresa> pregForm = formFactory.form(OfertaEmpresa.class).fill(instancia);
+        return ok(ofertaEmpresa.render("Formulario de oferta", pregForm, routes.OfertaEmpresaController.editarOfertaPost(id)));
+    }
+
+    public Result editarOfertaPost(Long id) {
+        OfertaEmpresa instancia = OfertaEmpresa.find.byId(id);
+        Form<OfertaEmpresa> pregForm = formFactory.form(OfertaEmpresa.class).fill(instancia).bindFromRequest();
+
+        if (pregForm.hasErrors()) {
+            return badRequest(ofertaEmpresa.render("Encontramos errores", pregForm, routes.OfertaEmpresaController.editarOfertaPost(id)));
+        }
+        
+        OfertaEmpresa preg = pregForm.get();
+        instancia.cargo = preg.cargo;
+        instancia.empresa = preg.empresa;
+        instancia.descripcionEmpleo = preg.descripcionEmpleo;
+        instancia.referencia = preg.referencia;
+          
+          instancia.tipoIndustria = preg.tipoIndustria;
+          instancia.categoria = preg.categoria;
+          instancia.nivel = preg.nivel;
+          instancia.personalACargo = preg.personalACargo;
+          
+          
+          instancia.vacantes = preg.vacantes;
+          instancia.salario = preg.salario;
+          instancia.estudiosMinimos = preg.estudiosMinimos;
+          instancia.experienciaMinima = preg.experienciaMinima;
+          instancia.requisitosMinimos = preg.requisitosMinimos;
+          instancia.residenciaPreferencia = preg.residenciaPreferencia;
+          instancia.save();
+        return redirect(routes.OfertaEmpresaController.listarOfertas());
+    }
     
     
 }//Fin clase
