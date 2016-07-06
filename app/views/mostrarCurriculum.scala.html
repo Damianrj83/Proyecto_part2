@@ -1,0 +1,25 @@
+@(message: String,  curriculum: List[Profesional])
+@import helper._
+
+
+@main(message) {
+   <h1> Curriculum </h1>
+
+<ul class="list-group">
+@for(preg <- curriculum) {
+ <li class="list-group-item" >@preg.nombre 
+      
+      <div class="btn-group pull-right" .role="group" aria-label="...">
+        <a href="@routes.ProfesionalController.editarCurriculumPost(preg.id)" 
+           class="btn btn-success">Editar</a>
+          
+      </div>
+      
+      
+      
+      
+  </li>
+}
+</ul>
+    
+}

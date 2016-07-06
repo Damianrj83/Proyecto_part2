@@ -15,6 +15,7 @@ import javax.persistence.*;
 import com.avaje.ebean.Model;
 import play.data.format.*;
 import play.data.validation.*;
+//import play.db.ebean.Model;
 
 @Entity
 public class CreateAccount extends Model {
@@ -22,9 +23,13 @@ public class CreateAccount extends Model {
     @Id
     @Constraints.Min(10)
     public Long id;
-
-	@Constraints.Required
-    public String contrasena;
+    
+    
+    
+       @Constraints.Required
+//       @MinLenght(6)
+//       @MaxLenght(20)
+       public String contrasena;
 
 	@Constraints.Required
     public String email;

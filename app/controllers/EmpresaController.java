@@ -40,7 +40,7 @@ public class EmpresaController extends Controller {
    
    public Result crearDescripcionGet(){
         Form<Empresa> empresaForm = formFactory.form(Empresa.class);
-       return ok(descripcionEmpresa.render("Descripcion",empresaForm, routes.EmpresaController.crearDescripcionGet()));
+       return ok(descripcionEmpresa.render("Descripcion",empresaForm, routes.EmpresaController.crearDescripcionPost()));
    }///
    
    

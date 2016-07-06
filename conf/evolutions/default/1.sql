@@ -34,6 +34,24 @@ create table main_empresa (
   constraint pk_main_empresa primary key (id)
 );
 
+create table oferta_empresa (
+  id                            bigint auto_increment not null,
+  cargo                         varchar(255),
+  empresa                       varchar(255),
+  descripcion_empleo            varchar(255),
+  referencia                    varchar(255),
+  tipo_industria                varchar(255),
+  categoria                     varchar(255),
+  nivel                         varchar(255),
+  personal_acargo               varchar(255),
+  vacantes                      varchar(255),
+  estudios_minimos              varchar(255),
+  experiencia_minima            varchar(255),
+  requisitos_minimos            varchar(255),
+  residencia_preferencia        varchar(255),
+  constraint pk_oferta_empresa primary key (id)
+);
+
 create table profesional (
   id                            bigint auto_increment not null,
   create_account_id             bigint,
@@ -57,6 +75,9 @@ create table profesional (
   salario_aspirar               varchar(255),
   residencia_preferida          varchar(255),
   experiencia_laboral           varchar(255),
+  idiomas                       varchar(255),
+  otro_idioma                   varchar(255),
+  conocimientos_no_formales     varchar(255),
   constraint uq_profesional_create_account_id unique (create_account_id),
   constraint pk_profesional primary key (id)
 );
@@ -75,6 +96,8 @@ drop table if exists cuenta;
 drop table if exists empresa;
 
 drop table if exists main_empresa;
+
+drop table if exists oferta_empresa;
 
 drop table if exists profesional;
 

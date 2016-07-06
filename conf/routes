@@ -12,7 +12,7 @@ POST	/crearSesion				controllers.HomeController.crearSesionPost()
 
 
 GET     /                           controllers.HomeController.index
-GET     /estudiante                 controllers.HomeController.index
+#GET     /estudiante                 controllers.HomeController.index
 
 GET		/perfilProfesional			controllers.ProfesionalController.crearMainGet()
 
@@ -21,7 +21,23 @@ GET		/perfilEmpresa			    controllers.EmpresaController.crearMainEmpresaGet()
 GET		/curriculumPro				controllers.ProfesionalController.crearCurriculumGet()
 POST	/curriculumPro				controllers.ProfesionalController.crearCurriculumPost()
 
-#GET	/cuenta						controllers.ProfesionalController.crearConfigCuentaGet()
+GET		/mostrarCurriculum			controllers.ProfesionalController.mostrarCurriculum()
+
+
+
+
+GET		/oferta						controllers.OfertaEmpresaController.crearOfertaGet()
+POST	/oferta						controllers.OfertaEmpresaController.crearOfertaPost()
+
+GET	    /cuenta						controllers.CuentaProfesionalController.crearConfigCuentaGet()
+POST	/cuenta						controllers.CuentaProfesionalController.crearConfigCuentaPost()
+
+
+GET		/editar/:id					controllers.ProfesionalController.editarCurriculumGet(id: Long)
+POST	/editar/:id					controllers.ProfesionalController.editarCurriculumPost(id: Long)
+
+
+
 
 #GET	/red						controllers.ProfesionalController.crearConfigRedGet()
 

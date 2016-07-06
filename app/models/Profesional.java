@@ -26,8 +26,10 @@ public class Profesional extends Model {
    // public Login login; nota: se borro el modelo Login, en caso de error restablecer
     
     
+//    @Id
+//    @Constraints.Min(10)
     @Id
-    @Constraints.Min(10)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
     
     @Formats.DateTime(pattern="dd/MM/yyyy")
@@ -93,8 +95,25 @@ public class Profesional extends Model {
      
      public String residenciaPreferida;
      
-     public String experienciaLaboral;
+     public String Experiencia_Laboral;
+     
+     public String idiomas;
+     
+     public String otroIdioma;
+     
+     public String Conocimientos_No_Formales;
+     
 
 
-    public static Finder<Long, Profesional> find = new Finder<Long,Profesional>(Profesional.class);
+    public static Finder<Long, Profesional> find = new Finder<Long, Profesional>(Profesional.class);
+    
+     public static Map<String,String> formulario() {
+        List<Profesional> curriculum = Profesional.find.all();
+        LinkedHashMap<String,String> options = new LinkedHashMap<>();
+        for(Profesional set: curriculum) {
+            options.put(set.id.toString(), set.nombre.toString());
+        }
+        return options;
+    }
+    
 }

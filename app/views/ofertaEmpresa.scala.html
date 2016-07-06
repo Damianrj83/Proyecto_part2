@@ -1,0 +1,135 @@
+@(message: String,  searchForm: Form[OfertaEmpresa], postUrl: play.api.mvc.Call)
+@import helper._
+
+@main(message) {
+
+
+<div class="alert"> @message </div>
+@form(postUrl, 'class -> "form") {
+    @if(searchForm.hasGlobalErrors) {
+        <div class="alert alert-danger">
+            @searchForm.globalError.message
+        </div>
+    }
+
+    <fieldset>
+
+       
+        
+            <div class="row">
+           
+                    <div class="col-md-2">
+                @inputText(searchForm("cargo"),'_label -> "Cargo",'class -> "form-control")
+            </div>
+               
+            
+               
+           
+                     <div class="col-md-2">
+                @inputText(searchForm("empresa"),'_label -> "Empresa",'class -> "form-control")
+            </div>
+               
+             </div>
+        
+         <div class="row">
+          
+              <div class="col-md-2">
+                @textarea(searchForm("descripcionEmpleo"),'_label -> "Descripcion de Empleo",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+              <div class="col-md-3">
+                @inputText(searchForm("referencia"),'_label -> "Referencia",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+              <div class="col-md-2">
+                @inputText(searchForm("tipoIndustria"),'_label -> "Tipo de Industria",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+               <div class="col-md-2">
+                @inputText(searchForm("categoria"),'_label -> "Categoria o Sector",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+              <div class="col-md-2">
+                @inputText(searchForm("nivel"),'_label -> "Nivel",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+               <div class="col-md-2">
+                @inputText(searchForm("personalACargo"),'_label -> "Personal a cargo",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+             
+               <div class="col-md-2">
+                @inputText(searchForm("vacantes"),'_label -> "Vacantes",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+               <div class="col-md-2">
+                @inputText(searchForm("salario"),'_label -> "Salario",'class -> "form-control")
+            </div>
+             
+        </div>
+        
+        <h1>Requisitos</h1>
+         <div class="row">
+          
+               <div class="col-md-2">
+                @inputText(searchForm("estudiosMinimos"),'_label -> "Estudios Minimos",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+              <div class="col-md-2">
+                @inputText(searchForm("experienciaMinima"),'_label -> "experienciaMinima",'class -> "form-control")
+            </div>
+                
+        </div>
+        
+         <div class="row">
+           <div class="col-md-2">
+                @inputText(searchForm("requisitosMinimos"),'_label -> "Requisitos Minimos",'class -> "form-control")
+            </div>
+                
+        </div>
+         <div class="row">
+          
+             <div class="col-md-2">
+                @inputText(searchForm("residenciaPreferencia"),'_label -> "Residencia de Preferencia",'class -> "form-control")
+            </div>
+             
+                
+        </div>
+        
+        
+        
+
+    </fieldset>
+    
+     <div class="form-actions text-center">
+        <input type="submit" class="btn btn-success" value="Guardar" >
+        
+    </div>
+    
+    }
+    
+}

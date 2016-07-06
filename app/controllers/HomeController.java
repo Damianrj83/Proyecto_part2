@@ -13,6 +13,7 @@ import play.data.validation.Constraints;
 import views.html.*;
 import controllers.ProfesionalController;
 import controllers.EmpresaController;
+import javax.swing.JOptionPane;
 
 
 
@@ -30,10 +31,13 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
+    
+    
     int error1;
     int error2;
     boolean booleanTipo;
     CreateAccount crearCuenta;
+    
     public Result index() {
         return ok(index.render("LINK-JOB"));
     }
@@ -55,6 +59,7 @@ public class HomeController extends Controller {
             pregForm = formFactory.form(CreateAccount.class);
           
               if(tipoUsuario(infoRegistro)){
+                  
             return redirect(routes.ProfesionalController.crearMainGet());
             
             }else{
@@ -64,7 +69,7 @@ public class HomeController extends Controller {
             }
             
         }//Fin if error
-        return ok(registro.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearRegistroPost()));//corregir, aqui va redirecc
+        return ok(registro.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearRegistroPost()));//hacer un metodo que reemplace esto
     }
     
     //Login
@@ -97,9 +102,8 @@ public class HomeController extends Controller {
             return redirect(routes.EmpresaController.crearMainEmpresaGet());
             
             }
-                      
-           // return redirect(routes.ProfesionalController.crearMainGet());// aqui va
-        }//ProfesionalController.crearCurriculumProfesionalGet()
+            
+        }
         return ok(login.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearSesionPost()));
         //la ventana login.scala.html va a recibir 3 parametros(String message, form(objeto), ruta)=
         //@(message: String,  searchForm: Form[CreateAccount], postUrl: play.api.mvc.Call)
@@ -116,6 +120,11 @@ public class HomeController extends Controller {
         return booleanTipo;
     }///Fin tipoUsuario
     
+    
+//    public static Result sustitution(){
+//    
+//    return ok(registro.render("Recepción de formulario correcto.", pregForm, routes.HomeController.crearRegistroPost()));
+//    }
     
 }//Fin controller
 

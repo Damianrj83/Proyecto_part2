@@ -43,29 +43,64 @@ public class ProfesionalController extends Controller {
      
       public Result crearCurriculumGet() {
             Form<Profesional> profesionalForm = formFactory.form(Profesional.class);
-        return ok(curriculumProfesional.render("Formulario", profesionalForm, routes.ProfesionalController.crearCurriculumGet()));
+        return ok(profesional.render("Formulario", profesionalForm, routes.ProfesionalController.crearCurriculumPost()));
     }
       
       
     public Result crearCurriculumPost() {
-        Form<Profesional> descripForm = formFactory.form(Profesional.class).bindFromRequest();
+        Form<Profesional> descripForm = formFactory.form(Profesional.class).bindFromRequest();//variable del Form
         if (descripForm.hasErrors()) {
             error1 =1;
-            return badRequest(curriculumProfesional.render("Encontramos errores", descripForm, routes.ProfesionalController.crearCurriculumGet()));
+            return badRequest(profesional.render("Encontramos errores", descripForm, routes.ProfesionalController.crearCurriculumGet()));
         } if(error1!=1) {//Si no tiene errores
-            Profesional infoDescrip = descripForm.get();
-            infoDescrip.save();
-            descripForm = formFactory.form(Profesional.class);
+            Profesional infoDescrip = descripForm.get();//Obtiene lo escrito en el Form qur fue almacenado en el Objeto
+            infoDescrip.save();//Guarda la informacion en la varible
+            descripForm = formFactory.form(Profesional.class);// Guarda la informacion del Formulario en el Objeto
         }//Fin if error
-        return ok(curriculumProfesional.render("Recepción de formulario correcto.", descripForm, routes.ProfesionalController.crearCurriculumPost()));//corregir, aqui va redirecc
+        return ok(profesional.render("Recepción de formulario correcto.", descripForm, routes.ProfesionalController.crearCurriculumPost()));//corregir, aqui va redirecc
     }  
       
+//    
+//    public static void show(Long id) {
+//        Profesional profesional = Profesional.findById(id);
+//        render("Informacion de Curriculum", descripForm,  );
+//    }
+//    
+//    
+     public Result mostrarCurriculum() {
+        List<Profesional> curriculum = Profesional.find.all();
 
+        return ok(mostrarCurriculum.render("Curriculum", curriculum));
+    }
+     
+     
+      public Result editarCurriculumGet(Long id) {
+        Profesional instancia = Profesional.find.byId(id);
+        Form<Profesional> pregForm = formFactory.form(Profesional.class).fill(instancia);
+        return ok(profesional.render("Formulario de pregunta",pregForm, routes.ProfesionalController.editarCurriculumPost(id)));
+    }
+
+    public Result editarCurriculumPost(Long id) {
+        Profesional instancia = Profesional.find.byId(id);
+        Form<Profesional> pregForm = formFactory.form(Profesional.class).fill(instancia).bindFromRequest();
+
+        if (pregForm.hasErrors()) {
+            return badRequest(profesional.render("Encontramos errores", pregForm, routes.ProfesionalController.editarCurriculumPost(id)
+            ));
+        }
+        
+        Profesional preg = pregForm.get();
+        instancia.cedula = preg.cedula;
+        instancia.apellido1 = preg.apellido1;
+        instancia.apellido2 = preg.apellido2;
+        instancia.genero = preg.genero;
+        instancia.save();
+        return redirect(routes.ProfesionalController.mostrarCurriculum());
+    }
+    
 
       
-//      public Result crearConfigCuentaGet() {
-//        return ok(cuentaConfig.render("Formulario", routes.ProfesionalController.crearConfigCuentaGet()));
-//    }
+
 
 //      public Result crearCurriculumGet() {
 //        return ok(redConfig.render("Formulario", routes.ProfesionalController.crearConfigRedGet()));

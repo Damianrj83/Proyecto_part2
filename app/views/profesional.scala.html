@@ -32,11 +32,11 @@
                 @inputText(searchForm("nombre"),'_label -> "Nombre",'class -> "form-control")</div>
                 
             <div class="col-md-4">
-                @inputText(searchForm("apellido1"),'_label -> "Appellido 1",'class -> "form-control")
+                @inputText(searchForm("apellido1"),'_label -> "Apellido 1",'class -> "form-control")
             </div>
               
               <div class="row">
-                  <div class="col-md-4">@inputText(searchForm("apellido2"),'_label -> "Appellido 2",'class -> "form-control")</div>
+                  <div class="col-md-4">@inputText(searchForm("apellido2"),'_label -> "Apellido 2",'class -> "form-control")</div>
          
               </div>
               
@@ -227,10 +227,45 @@
 		  
 		  <!--CODE HERE(FORMULARIO)-->
       
+                   <div class="row">
+                       <div class="col-md-2">
+      
+      @input(searchForm("idiomas")) { (id, name, value, args) =>   <select name="@name" id="@id" @toHtmlArgs(args)>
+                                                                         <option value="Ingles" selected>Ingl&#233s</option>
+                                                                         <option value="Aleman">Alem&#225n</option>
+                                                                         <option value="Portugues">Portugu&#233s</option>
+                                                                         <option value="Frances">Franc&#233s</option>
+                                                                        </select>}
+                                                                        
+                                                                        </div>
+                                                                             
+                                                                                
+                                                                             <div class="col-md-2">
+                                                                           @inputText(searchForm("otroIdioma"),'_label -> "Otro idioma",'class -> "form-control") 
+                                                                             </div>
+                                                                        </div>
+                  <div class="row">
+                      
+                   @input(searchForm("Conocimientos_No_Formales")) { (id, name, value, args) =>   <select name="@name" id="@id" @toHtmlArgs(args)>
+                                                                         <option value="Computo" selected>C&#243mputo</option>
+                                                                         <option value="Electrica">El&#233ctrica</option>
+                                                                         <option value="Economia">Econom&#237a</option>
+                                                                         <option value="Mecanica">Mec&#225nica</option>
+                                                                         <option value="Estadistica">Historia</option>
+                                                                         <option value="Estadistica">Medicina</option>
+                                                                        </select>}   
+                      
+                      
+                  </div>
+      </div>
+                  
+                  
+                  
+                  
       </div><!--Fin formulario-->
     </div>
   </div><!--FIN COLLAPSE5-->
-</div>
+<!--</div>-->
 <div class="panel panel-default"><!--INICIA COLLAPSE6-->
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -252,8 +287,11 @@
    
      <div class="form-actions text-center">
         <input type="submit" class="btn btn-success" value="Guardar" >
-           
+          <a href="@routes.ProfesionalController.mostrarCurriculum()" class="btn btn-default">Listar</a> 
     </div>
+    
+    
+   
    
    }  
 }

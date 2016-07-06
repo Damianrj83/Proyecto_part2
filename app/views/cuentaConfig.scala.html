@@ -1,0 +1,49 @@
+@(message: String,  searchForm: Form[Cuenta], postUrl: play.api.mvc.Call)
+@import helper._
+
+@main(message) {
+
+
+<div class="alert"> @message </div>
+@form(postUrl, 'class -> "form") {
+    @if(searchForm.hasGlobalErrors) {
+        <div class="alert alert-danger">
+            @searchForm.globalError.message
+        </div>
+    }
+
+    <fieldset>
+
+        <div class="row">
+            <div class="col-md-2"> 
+                @inputPassword(searchForm("contrasenaActual"),'_label -> "Contrasena actual",'class -> "form-control")</div>
+                
+        </div>
+        
+            <div class="row">
+           
+                    <div class="col-md-2">
+                @inputPassword(searchForm("nuevaContrasena"),'_label -> "Nueva contrasena",'class -> "form-control")
+            </div>
+               
+             </div>
+                <div class="row">
+           
+                     <div class="col-md-2">
+                @inputPassword(searchForm("repetir"),'_label -> "Repetir",'class -> "form-control")
+            </div>
+               
+             </div>
+        
+        
+
+    </fieldset>
+    
+     <div class="form-actions text-center">
+        <input type="submit" class="btn btn-success" value="Guardar" >
+        
+    </div>
+    
+    }
+    
+}
