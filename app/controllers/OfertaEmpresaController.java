@@ -78,9 +78,9 @@ public class OfertaEmpresaController extends Controller{
 //        
 //        OfertaEmpresa preg = pregForm.get();
 //        instancia.cargo = preg.cargo;
-//        instancia.tipo = preg.tipo;
-//        instancia.requerida = preg.requerida;
-//        instancia.textoAyuda = preg.textoAyuda;
+//        instancia.empresa = preg.empresa;
+//        instancia.descripcionEmpleo = preg.descripcionEmpleo;
+//        instancia.referencia = preg.referencia;
 //        instancia.save();
 //        return redirect(routes.OfertaEmpresaController.listarOfertas());
 //    }
